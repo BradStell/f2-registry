@@ -1,0 +1,40 @@
+<div style="margin-left:1%;margin-right:1%;">
+    <div id="mainContent" style="width:100%"></div>
+</div>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/F2/1.4.0/f2.basic.min.js"></script>
+
+<script type="text/javascript">
+    var _appConfig = {
+        appId: 'com_kingsmen_f2_snp',
+        manifestUrl: '../../apps/snp500/manifest.js',
+        name: 'SnP 500 ticker list'
+    };
+
+    $(function(){
+        var _token = F2.AppHandlers.getToken();
+        var appRender = function(appConfig,appHtml){ 
+            //add app HTML to 'root' element created in APP_CREATE_ROOT
+            var $section = $(appConfig.root).append(appHtml);
+            
+            //place apps
+            if (appConfig.appId == 'com_kingsmen_f2_snp'){
+                $('#mainContent').append($section);
+            }
+        };
+        
+        F2.init();
+        F2.AppHandlers.on(
+            _token,
+            F2.Constants.AppHandlers.APP_CREATE_ROOT,
+            function(appConfig){
+                appConfig.root = $('<section />').get(0);
+            }
+        );
+        F2.AppHandlers.on(_token, F2.Constants.AppHandlers.APP_RENDER, appRender);
+        F2.registerApps(_appConfig);
+    });
+</script>
