@@ -1,9 +1,11 @@
 F2_jsonpCallback_com_kingsmen_f2_snp({
 	"scripts":[
-		"../../apps/snp500/appclass.js"
+		//"../../apps/snp500/appclass.js"
+		"http://localhost:3344/apps/snp500/appclass.js"
 	],
 	"styles":[
-        "../../apps/snp500/app.css"
+        //"../../apps/snp500/app.css"
+		"http://localhost:3344/apps/snp500/app.css"
 	],
 	"apps":[
 		{

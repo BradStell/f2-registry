@@ -8,6 +8,7 @@ let port = process.env.PORT || 3344;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
+app.use(express.static(__dirname + '/apps'));
 
 // comment
 router.route('/f2AppTestHarness/:method')

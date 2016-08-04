@@ -1,9 +1,11 @@
 F2_jsonpCallback_com_kingsmen_f2_secondapp({
 	"scripts":[
-		"../../apps/secondapp/appclass.js"
+		//"../../apps/secondapp/appclass.js"
+		"http://localhost:3344/apps/secondapp/appclass.js"
 	],
 	"styles":[
-        "../../apps/secondapp/app.css"
+        //"../../apps/secondapp/app.css"
+		"http://localhost:3344/apps/secondapp/app.css"
 	],
 	"apps":[
 		{
