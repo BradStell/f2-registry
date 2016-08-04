@@ -8,15 +8,14 @@ F2_jsonpCallback_com_kingsmen_f2_snp({
 	"apps":[
 		{
 			"html":[
-				'<div id="main-dropdown" class="dropdown">',
-                    '<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">S&P500 Indexes',
-                    '<span class="caret"></span></button>',
+                '<div class="container snpapp">',
+                    '<div id="main-dropdown" class="dropdown">',
+                        '<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">S&P500 Indexes',
+                        '<span class="caret"></span></button>',
+                    '</div>',
+                    '<div class="custom-text" id="detail-content"><p>Company Name</p></div>',
                 '</div>'
 			].join("")
 		}
 	]
 })
-
-
-                    // '<ul id="snp-dropdown" class="dropdown-menu">',
-                    // '</ul>',

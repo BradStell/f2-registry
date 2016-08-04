@@ -2,3 +2,10 @@
     font-family: fantasy;
     font-size: 30px;
 }
+
+.com_kingsmen_f2_snp .snpapp {
+    padding-top: 10px;
+    margin-top: 20px;
+    border: 1px solid dodgerblue;
+    border-radius: 5px;
+}

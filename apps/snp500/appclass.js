@@ -29,6 +29,8 @@
 */
 F2.Apps["com_kingsmen_f2_snp"] = function(appConfig, appContent, root) {
 
+    var dataArray = [];
+
     function hitServerAsync(callback) {
         $.get('http://192.168.1.116:5020/detail', function (resp) {
             callback(resp);
@@ -36,7 +38,7 @@ F2.Apps["com_kingsmen_f2_snp"] = function(appConfig, appContent, root) {
     }
 
     function populateDropdown(data) {
-        var dataArray = data.companies;
+        dataArray = data.companies;
         var textToInsert = [];
         var i = 0;
         var length = dataArray.length;
@@ -50,11 +52,21 @@ F2.Apps["com_kingsmen_f2_snp"] = function(appConfig, appContent, root) {
         $('#main-dropdown').append(textToInsert.join(''));
     }
 
+    function setListeners() {
+        $('#main-dropdown').on('click', 'li', function(data) {
+            var projIndex = $(this).index();
+            console.log((dataArray[projIndex])[1]);
+            $('#detail-content p').text((dataArray[projIndex])[1]);
+        });
+    }
+
     return {
         init: function() {
             hitServerAsync(function(data) {
                 populateDropdown(data);
-            });            
+            });
+
+            setListeners();
         }
     }
 };
