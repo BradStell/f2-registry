@@ -9,6 +9,7 @@ let port = process.env.PORT || 3344;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
 app.use(express.static(__dirname + '/apps'));
+app.use(express.static(__dirname + '/resources'));
 
 // comment
 router.route('/f2AppTestHarness/:method')
@@ -18,5 +19,6 @@ router.route('/f2AppTestHarness/:method')
 
 app.use(router);
 
-app.listen(port);
-console.log(`Listening on port ${port}`);
+app.listen(port, () => {
+    console.log(`Listening on port ${port}`);
+});

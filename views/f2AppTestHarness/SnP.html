@@ -27,7 +27,15 @@
             }
         };
         
-        F2.init();
+        F2.init({
+            UI: {
+                Mask: {
+                    loadingIcon: 'http://localhost:3344/resources/images/spinner.gif',
+                    backgroundColor: '#fff',
+                    opacity: 0.5
+                }
+            }
+        });
         F2.AppHandlers.on(
             _token,
             F2.Constants.AppHandlers.APP_CREATE_ROOT,

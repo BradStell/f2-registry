@@ -62,6 +62,7 @@ F2.Apps["com_kingsmen_f2_snp"] = function(appConfig, appContent, root) {
 
     return {
         init: function() {
+
             hitServerAsync(function(data) {
                 populateDropdown(data);
             });
